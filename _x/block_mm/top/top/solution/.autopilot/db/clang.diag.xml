@@ -1,0 +1,49 @@
+<dict>
+  <key>main-file</key>
+  <string>/data/matthew/uscfpga-training/project1/example/_x/block_mm/top/top/solution/.autopilot/db/block_mm.pp.0.cpp</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>error</string>
+      <key>filename</key>
+      <string>/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp</string>
+      <key>line</key>
+      <integer>52</integer>
+      <key>column</key>
+      <integer>6</integer>
+      <key>message</key>
+      <string>type &apos;blockmat&apos; does not provide a subscript operator</string>
+      <key>ID</key>
+      <integer>3337</integer>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>error</string>
+      <key>filename</key>
+      <string>/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp</string>
+      <key>line</key>
+      <integer>52</integer>
+      <key>column</key>
+      <integer>20</integer>
+      <key>message</key>
+      <string>type &apos;hls::stream&lt;blockvec&gt;&apos; does not provide a subscript operator</string>
+      <key>ID</key>
+      <integer>3337</integer>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>error</string>
+      <key>filename</key>
+      <string>/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp</string>
+      <key>line</key>
+      <integer>52</integer>
+      <key>column</key>
+      <integer>38</integer>
+      <key>message</key>
+      <string>type &apos;hls::stream&lt;blockvec&gt;&apos; does not provide a subscript operator</string>
+      <key>ID</key>
+      <integer>3337</integer>
+    </dict>
+  </array>
+</dict>

@@ -1,0 +1,12 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-3337" msg_severity="ERROR" msg_loc="/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:6" msg_body="type 'blockmat' does not provide a subscript operator">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-3337" msg_severity="ERROR" msg_loc="/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:20" msg_body="type 'hls::stream&lt;blockvec&gt;' does not provide a subscript operator">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-3337" msg_severity="ERROR" msg_loc="/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:38" msg_body="type 'hls::stream&lt;blockvec&gt;' does not provide a subscript operator">
+        <args/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

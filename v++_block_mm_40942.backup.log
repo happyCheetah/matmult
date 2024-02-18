@@ -1,0 +1,27 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /data/matthew/uscfpga-training/project1/example/_x/reports/block_mm
+	Log files: /data/matthew/uscfpga-training/project1/example/_x/logs/block_mm
+INFO: [v++ 60-1548] Creating build summary session with primary output /data/matthew/uscfpga-training/project1/example/block_mm.xo.compile_summary, at Fri Jan 19 13:48:17 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/data/matthew/uscfpga-training/project1/example/_x/reports/block_mm/v++_compile_block_mm_guidance.html', at Fri Jan 19 13:48:17 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1/xilinx_u200_gen3x16_xdma_2_202110_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_gen3x16_xdma_2_202110_1
+INFO: [v++ 60-242] Creating kernel: 'top'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: top Log file: /data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log :
+ERROR: [v++ 207-2976] no template named 'stream' in the global namespace; did you mean 'hls::stream'? (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:23:72)
+ERROR: [v++ 207-3776] use of undeclared identifier 'i' (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:43:22)
+ERROR: [v++ 207-3337] type 'blockmat' does not provide a subscript operator (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:6)
+ERROR: [v++ 207-3337] type 'hls::stream<blockvec>' does not provide a subscript operator (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:20)
+ERROR: [v++ 207-3776] use of undeclared identifier 'j' (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:46)
+ERROR: [v++ 60-300] Failed to build kernel(ip) top, see log for details: /data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log
+ERROR: [v++ 60-773] In '/data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-2976] no template named 'stream' in the global namespace; did you mean 'hls::stream'? (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:23:72)
+ERROR: [v++ 60-773] In '/data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3776] use of undeclared identifier 'i' (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:43:22)
+ERROR: [v++ 60-773] In '/data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3337] type 'blockmat' does not provide a subscript operator (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:6)
+ERROR: [v++ 60-773] In '/data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3337] type 'hls::stream<blockvec>' does not provide a subscript operator (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:20)
+ERROR: [v++ 60-773] In '/data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3776] use of undeclared identifier 'j' (/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:46)
+ERROR: [v++ 60-599] Kernel compilation failed to complete
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1653] Closing dispatch client.

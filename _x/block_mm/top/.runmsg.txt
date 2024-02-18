@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: top
+Log file: /data/matthew/uscfpga-training/project1/example/_x/block_mm/top/vitis_hls.log

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.072 GB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;/data/matthew/matmult_u200/src/block_mm.cpp&apos; ..." resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3337]" key="HLS 207-3337" tag="" content="type &apos;blockmat&apos; does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:6)" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3337]" key="HLS 207-3337" tag="" content="type &apos;hls::stream&lt;blockvec&gt;&apos; does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:24)" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3337]" key="HLS 207-3337" tag="" content="type &apos;hls::stream&lt;blockvec&gt;&apos; does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:42)" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 0.49 seconds. CPU system time: 0.28 seconds. Elapsed time: 0.77 seconds; current allocated memory: 0.773 MB." resolution=""/>
+</Messages>

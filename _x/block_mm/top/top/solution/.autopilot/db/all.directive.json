@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "top",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/data\/matthew\/uscfpga-training\/project1\/example\/_x\/block_mm\/top\/top.tcl",
+          "sourceLine": "29",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "top"
+              }]
+          }
+        }]
+    }]}

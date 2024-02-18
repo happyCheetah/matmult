@@ -1,0 +1,10 @@
+/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:6: error: type 'blockmat' does not provide a subscript operator
+    C[n][m] = Arows[n*SIZE+k] * Bcols[k*SIZE+m];
+    ~^~
+/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:20: error: type 'hls::stream<blockvec>' does not provide a subscript operator
+    C[n][m] = Arows[n*SIZE+k] * Bcols[k*SIZE+m];
+              ~~~~~^~~~~~~~~
+/data/matthew/uscfpga-training/project1/example/src/block_mm.cpp:52:38: error: type 'hls::stream<blockvec>' does not provide a subscript operator
+    C[n][m] = Arows[n*SIZE+k] * Bcols[k*SIZE+m];
+                                ~~~~~^~~~~~~~~
+3 errors generated.
