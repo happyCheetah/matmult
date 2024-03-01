@@ -20,13 +20,16 @@ void top(blockvec A[], blockvec B[],blockmat C[]){
 	//pipe[0] and [1] are fifos used to chain together provider(load_DDR) and consumer(blockmatmul)
 	//pipe[0] for Arows, pipe[1] for Bcols
 
+	blockvec C_onchip[SIZE];
+	
 	//"it" is a counter to keep track of the tile/block indices in different kernel calls
 	for (int it=0;it<n;it++){
 		#pragma HLS DATAFLOW
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array
 		// *** your code here *** //
 		loadDDR(A, B, pipe[0], pipe[1],SIZE);
-		blockmatmul(pipe[0], pipe[1], C, SIZE);
+		blockmatmul(pipe[0], pipe[1], C_onchip, SIZE);
+		
 	}
 // Final goal:
 	// for (int it=0;it<n;it++){
