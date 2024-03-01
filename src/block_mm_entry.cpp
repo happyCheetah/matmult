@@ -3,6 +3,7 @@
 //top lvl module. 
 //note given no host code, skip host related step in compiling process
 
+int n = 8;
 void top(blockvec A[], blockvec B[],blockmat C[]){
 	//Assume C is buffered on-chip
 	#pragma HLS INTERFACE bram port=C storage_type=ram_2p
@@ -20,13 +21,24 @@ void top(blockvec A[], blockvec B[],blockmat C[]){
 	//pipe[0] for Arows, pipe[1] for Bcols
 
 	//"it" is a counter to keep track of the tile/block indices in different kernel calls
-	for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
+	for (int it=0;it<n;it++){
 		#pragma HLS DATAFLOW
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array
 		// *** your code here *** //
 		loadDDR(A, B, pipe[0], pipe[1],SIZE);
 		blockmatmul(pipe[0], pipe[1], C, SIZE);
 	}
+// Final goal:
+	// for (int it=0;it<n;it++){
+	// 	#pragma HLS DATAFLOW
+	// 	loadDDR(A, B pipe_A, buffer_B, it);
+	// 	loadDDR(D, pipe_D, SIZE2);
+	// 	blockmatmul(pipe_A, buffer_B, buffer_C, it);
+	//	blockmatmul(pipe_D, buffer_C, buffer_E, it);
+	// 	writeDDR(buffer_E, E);
+	// }
+
+	
 }
 
 
