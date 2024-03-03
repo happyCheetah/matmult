@@ -1,0 +1,23 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /data/matthew/matmult_u200/u200/hw_emu/_x/reports/block_mm
+	Log files: /data/matthew/matmult_u200/u200/hw_emu/_x/logs/block_mm
+INFO: [v++ 60-1548] Creating build summary session with primary output /data/matthew/matmult_u200/u200/hw_emu/block_mm.xo.compile_summary, at Fri Feb 16 12:52:58 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/data/matthew/matmult_u200/u200/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html', at Fri Feb 16 12:52:58 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1/xilinx_u200_gen3x16_xdma_2_202110_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_gen3x16_xdma_2_202110_1
+INFO: [v++ 60-242] Creating kernel: 'top'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: top Log file: /data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log :
+ERROR: [v++ 207-3337] type 'blockmat' does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:6)
+ERROR: [v++ 207-3337] type 'hls::stream<blockvec>' does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:24)
+ERROR: [v++ 207-3337] type 'hls::stream<blockvec>' does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:42)
+ERROR: [v++ 60-300] Failed to build kernel(ip) top, see log for details: /data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log
+ERROR: [v++ 60-773] In '/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3337] type 'blockmat' does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:6)
+ERROR: [v++ 60-773] In '/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3337] type 'hls::stream<blockvec>' does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:24)
+ERROR: [v++ 60-773] In '/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-3337] type 'hls::stream<blockvec>' does not provide a subscript operator (/data/matthew/matmult_u200/src/block_mm.cpp:52:42)
+ERROR: [v++ 60-599] Kernel compilation failed to complete
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1653] Closing dispatch client.

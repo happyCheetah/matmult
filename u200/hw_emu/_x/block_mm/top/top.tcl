@@ -6,7 +6,7 @@ catch {::common::set_param -quiet hls.xocc.mode csynth};
 open_project top
 set_top top
 # v++ -g, -D, -I, --advanced.prop kernel.top.kernel_flags
-add_files "/data/matthew/matmult_u200/src/block_mm.cpp" -cflags " -g -I /data/matthew/matmult_u200/src"
+add_files "/data/matthew/matmult_u200/src/block_mm_entry.cpp" -cflags " -g -I /data/matthew/matmult_u200/src"
 open_solution -flow_target vitis solution
 set_part xcu200-fsgd2104-2-e
 create_clock -period 300.000000MHz -name default

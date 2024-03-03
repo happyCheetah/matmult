@@ -9,13 +9,13 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri Feb 16 12:52:58 2024",
- "timestampMillis": "1708116778453",
+ "dateTimestamp": "Sat Mar  2 22:35:49 2024",
+ "timestampMillis": "1709447749409",
  "buildStep": {
-  "cmdId": "13dda2bd-de89-4d62-88f6-10e0ddc903e8",
+  "cmdId": "aeb3f8e9-b3c2-4ff8-8e82-03c309c50656",
   "name": "v++",
   "logFile": "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/block_mm.steps.log",
-  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw_emu --platform xilinx_u200_gen3x16_xdma_2_202110_1 --config ../../src/u200.cfg -k top -I../../src ../../src/block_mm.cpp -o ./block_mm.xo ",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw_emu --platform xilinx_u200_gen3x16_xdma_2_202110_1 --config ../../src/u200.cfg -k top -I../../src ../../src/block_mm_entry.cpp -o ./block_mm.xo ",
   "args": [
    "-c",
    "-t",
@@ -27,7 +27,7 @@
    "-k",
    "top",
    "-I../../src",
-   "../../src/block_mm.cpp",
+   "../../src/block_mm_entry.cpp",
    "-o",
    "./block_mm.xo"
   ],
@@ -44,10 +44,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 16 12:52:58 2024",
- "timestampMillis": "1708116778453",
+ "dateTimestamp": "Sat Mar  2 22:35:49 2024",
+ "timestampMillis": "1709447749409",
  "status": {
-  "cmdId": "13dda2bd-de89-4d62-88f6-10e0ddc903e8",
+  "cmdId": "aeb3f8e9-b3c2-4ff8-8e82-03c309c50656",
   "state": "CS_RUNNING"
  }
 }
@@ -55,8 +55,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri Feb 16 12:53:09 2024",
- "timestampMillis": "1708116789069",
+ "dateTimestamp": "Sat Mar  2 22:35:59 2024",
+ "timestampMillis": "1709447759947",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u200_gen3x16_xdma_2_202110_1.xpfm",
   "hardwareDsa": "hw.xsa",
@@ -75,7 +75,7 @@
      "uuid": ""
     },
     "sources": [
-     "/data/matthew/matmult_u200/src/block_mm.cpp"
+     "/data/matthew/matmult_u200/src/block_mm_entry.cpp"
     ],
     "psSources": [],
     "cuNames": [],
@@ -91,10 +91,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Fri Feb 16 12:53:09 2024",
- "timestampMillis": "1708116789072",
+ "dateTimestamp": "Sat Mar  2 22:35:59 2024",
+ "timestampMillis": "1709447759950",
  "buildStep": {
-  "cmdId": "cd47214d-6704-4cae-8714-378c3d2c996f",
+  "cmdId": "cd3121ec-9096-40fa-a508-98cc0128a37a",
   "name": "vitis_hls",
   "logFile": "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log",
   "commandLine": "vitis_hls -f /data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl -messageDb vitis_hls.pb",
@@ -113,10 +113,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 16 12:53:09 2024",
- "timestampMillis": "1708116789072",
+ "dateTimestamp": "Sat Mar  2 22:35:59 2024",
+ "timestampMillis": "1709447759950",
  "status": {
-  "cmdId": "cd47214d-6704-4cae-8714-378c3d2c996f",
+  "cmdId": "cd3121ec-9096-40fa-a508-98cc0128a37a",
   "state": "CS_RUNNING"
  }
 }
@@ -124,10 +124,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 16 12:53:17 2024",
- "timestampMillis": "1708116797205",
+ "dateTimestamp": "Sat Mar  2 22:36:14 2024",
+ "timestampMillis": "1709447774498",
  "status": {
-  "cmdId": "cd47214d-6704-4cae-8714-378c3d2c996f",
+  "cmdId": "cd3121ec-9096-40fa-a508-98cc0128a37a",
   "state": "CS_FAILED"
  }
 }
@@ -135,10 +135,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 16 12:53:17 2024",
- "timestampMillis": "1708116797207",
+ "dateTimestamp": "Sat Mar  2 22:36:14 2024",
+ "timestampMillis": "1709447774501",
  "status": {
-  "cmdId": "13dda2bd-de89-4d62-88f6-10e0ddc903e8",
+  "cmdId": "aeb3f8e9-b3c2-4ff8-8e82-03c309c50656",
   "state": "CS_FAILED"
  }
 }
@@ -146,8 +146,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 16 12:53:17 2024",
- "timestampMillis": "1708116797327",
+ "dateTimestamp": "Sat Mar  2 22:36:14 2024",
+ "timestampMillis": "1709447774628",
  "report": {
   "path": "/data/matthew/matmult_u200/u200/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html",
   "name": "",
@@ -160,8 +160,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 16 12:53:17 2024",
- "timestampMillis": "1708116797328",
+ "dateTimestamp": "Sat Mar  2 22:36:14 2024",
+ "timestampMillis": "1709447774629",
  "report": {
   "path": "/data/matthew/matmult_u200/u200/hw_emu/_x/v++_compile_block_mm_guidance.pb3",
   "name": "",

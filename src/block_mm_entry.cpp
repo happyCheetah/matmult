@@ -4,7 +4,7 @@
 //note given no host code, skip host related step in compiling process
 
 int n = 8;
-void top(blockvec A[], blockvec B[],blockmat C[]){
+void top(blockvec A[], blockvec B[],blockvec C[]){
 	//Assume C is buffered on-chip
 	#pragma HLS INTERFACE bram port=C storage_type=ram_2p
 	//Put DDR interfacing directives for A & B
@@ -15,7 +15,7 @@ void top(blockvec A[], blockvec B[],blockmat C[]){
 	// #pragma HLS INTERFACE s_axilite port=return bundle=control
 	// #pragma HLS aggregate variable=C
 	//Stream<blockvec> pipe[2];
-	hls::steam<blockvec> pipe[2];
+	hls::stream<blockvec> pipe[2];
 	#pragma HLS STREAM variable=pipe depth=8
 	//pipe[0] and [1] are fifos used to chain together provider(load_DDR) and consumer(blockmatmul)
 	//pipe[0] for Arows, pipe[1] for Bcols

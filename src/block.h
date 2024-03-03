@@ -16,5 +16,4 @@ typedef struct {
 // } blockmat;
 
 void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, int it);
-void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols,
-blockmat & ABpartial, int it);
+void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blockvec C[], int it);

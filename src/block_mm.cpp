@@ -36,7 +36,7 @@ void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec 
 	#pragma HLS aggregate variable=B
 
 	loadA(A, Arows, it);
-	loadB(B, Bcols, it);
+	loadB(B, B_buffer, it);
 }
 
 // void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockmat & C, int it) {
@@ -49,7 +49,7 @@ void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockvec C[], i
 	
 	blockvec row, col;
 
-	for(int n=0;n<BLOCK_SIZE;n++ ){
+	for(int n=0;n<SIZE;n++ ){
 		row = Arows.read();
 		for (int k=0;k<SIZE;k++){
 		#pragma HLS PIPELINE
@@ -59,7 +59,7 @@ void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockvec C[], i
 				col = Bcols[m];
 				//C.out([n*SIZE+m]) = Arows[n*SIZE+k] * Bcols[k*SIZE+m];
 				// C.out[n*SIZE+m] += row.a[k] * col.a[k];
-				C[n].out[m] += row.a[k] * col.a[k];
+				C[n].a[m] += row.a[k] * col.a[k];
 			}
 		}
 	}
