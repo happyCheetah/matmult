@@ -1,6 +1,6 @@
 <pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<blockvec, 0>::stream()" off="0" region="0" recursive="0"/>
 <pragma file="/data/matthew/matmult_u200/src/block_mm_entry.cpp" line="27" pragmaType="dataflow" parentfunction="top" disable_start_propagation="0"/>
 <pragma file="/data/matthew/matmult_u200/src/block_mm_entry.cpp" line="9" pragmaType="interface" parentfunction="top" mode="ap_memory" port="C" storage_type="666" impl="208" latency="-1" name="" depth="-1"/>
 <pragma file="/data/matthew/matmult_u200/src/block_mm_entry.cpp" line="19" pragmaType="stream" parentfunction="top" depth="8" type="fifo" variable="pipe"/>
-<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<blockvec, 0>::stream()" off="0" region="0" recursive="0"/>
 </pragmas>

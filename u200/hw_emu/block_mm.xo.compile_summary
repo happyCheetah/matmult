@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Mar  2 22:35:49 2024",
- "timestampMillis": "1709447749409",
+ "dateTimestamp": "Thu Mar  7 13:19:47 2024",
+ "timestampMillis": "1709846387549",
  "buildStep": {
-  "cmdId": "aeb3f8e9-b3c2-4ff8-8e82-03c309c50656",
+  "cmdId": "2e80bd47-2f99-4fa7-a727-81a0f5ce2409",
   "name": "v++",
   "logFile": "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/block_mm.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw_emu --platform xilinx_u200_gen3x16_xdma_2_202110_1 --config ../../src/u200.cfg -k top -I../../src ../../src/block_mm_entry.cpp -o ./block_mm.xo ",
@@ -44,10 +44,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Mar  2 22:35:49 2024",
- "timestampMillis": "1709447749409",
+ "dateTimestamp": "Thu Mar  7 13:19:47 2024",
+ "timestampMillis": "1709846387550",
  "status": {
-  "cmdId": "aeb3f8e9-b3c2-4ff8-8e82-03c309c50656",
+  "cmdId": "2e80bd47-2f99-4fa7-a727-81a0f5ce2409",
   "state": "CS_RUNNING"
  }
 }
@@ -55,8 +55,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sat Mar  2 22:35:59 2024",
- "timestampMillis": "1709447759947",
+ "dateTimestamp": "Thu Mar  7 13:19:58 2024",
+ "timestampMillis": "1709846398102",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u200_gen3x16_xdma_2_202110_1.xpfm",
   "hardwareDsa": "hw.xsa",
@@ -91,10 +91,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Mar  2 22:35:59 2024",
- "timestampMillis": "1709447759950",
+ "dateTimestamp": "Thu Mar  7 13:19:58 2024",
+ "timestampMillis": "1709846398105",
  "buildStep": {
-  "cmdId": "cd3121ec-9096-40fa-a508-98cc0128a37a",
+  "cmdId": "67062d28-23f9-43d7-8484-4c27164c4b45",
   "name": "vitis_hls",
   "logFile": "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log",
   "commandLine": "vitis_hls -f /data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl -messageDb vitis_hls.pb",
@@ -113,10 +113,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Mar  2 22:35:59 2024",
- "timestampMillis": "1709447759950",
+ "dateTimestamp": "Thu Mar  7 13:19:58 2024",
+ "timestampMillis": "1709846398105",
  "status": {
-  "cmdId": "cd3121ec-9096-40fa-a508-98cc0128a37a",
+  "cmdId": "67062d28-23f9-43d7-8484-4c27164c4b45",
   "state": "CS_RUNNING"
  }
 }
@@ -124,10 +124,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Mar  2 22:36:14 2024",
- "timestampMillis": "1709447774498",
+ "dateTimestamp": "Thu Mar  7 13:20:12 2024",
+ "timestampMillis": "1709846412389",
  "status": {
-  "cmdId": "cd3121ec-9096-40fa-a508-98cc0128a37a",
+  "cmdId": "67062d28-23f9-43d7-8484-4c27164c4b45",
   "state": "CS_FAILED"
  }
 }
@@ -135,10 +135,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Mar  2 22:36:14 2024",
- "timestampMillis": "1709447774501",
+ "dateTimestamp": "Thu Mar  7 13:20:12 2024",
+ "timestampMillis": "1709846412392",
  "status": {
-  "cmdId": "aeb3f8e9-b3c2-4ff8-8e82-03c309c50656",
+  "cmdId": "2e80bd47-2f99-4fa7-a727-81a0f5ce2409",
   "state": "CS_FAILED"
  }
 }
@@ -146,8 +146,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Mar  2 22:36:14 2024",
- "timestampMillis": "1709447774628",
+ "dateTimestamp": "Thu Mar  7 13:20:12 2024",
+ "timestampMillis": "1709846412517",
  "report": {
   "path": "/data/matthew/matmult_u200/u200/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html",
   "name": "",
@@ -160,8 +160,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Mar  2 22:36:14 2024",
- "timestampMillis": "1709447774629",
+ "dateTimestamp": "Thu Mar  7 13:20:12 2024",
+ "timestampMillis": "1709846412518",
  "report": {
   "path": "/data/matthew/matmult_u200/u200/hw_emu/_x/v++_compile_block_mm_guidance.pb3",
   "name": "",

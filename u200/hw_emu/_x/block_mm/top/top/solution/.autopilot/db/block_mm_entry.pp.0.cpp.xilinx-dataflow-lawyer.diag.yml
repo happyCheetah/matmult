@@ -13,16 +13,4 @@ Diagnostics:
     Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
     FileOffset:      '30:25'
     FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
-  - DiagnosticName:  clang-diagnostic-warning
-    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '31:15'
-    FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
-  - DiagnosticName:  clang-diagnostic-warning
-    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '31:24'
-    FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
-  - DiagnosticName:  clang-diagnostic-warning
-    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '31:33'
-    FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
 ...

@@ -2,9 +2,6 @@
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-110" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/src/block_mm_entry.cpp:26:36" msg_body="As the loop bound is not a constant or function argument, the compiler may not successfully process the dataflow loop"/>
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/src/block_mm_entry.cpp:30:16" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/src/block_mm_entry.cpp:30:25" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/src/block_mm_entry.cpp:31:15" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/src/block_mm_entry.cpp:31:24" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/src/block_mm_entry.cpp:31:33" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl:27:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>

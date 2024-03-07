@@ -40721,7 +40721,7 @@ __attribute__((sdx_kernel("top", 0))) void top(blockvec A[], blockvec B[],blockv
 
 
  loadDDR(A, B, pipe[0], pipe[1],SIZE);
-  blockmatmul(pipe[0], pipe[1], C_onchip, SIZE);
+
 
  }
 # 45 "/data/matthew/matmult_u200/src/block_mm_entry.cpp"

@@ -6,7 +6,7 @@
 
 source /tools/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'matthew' on host 'yangzi' (Linux_x86_64 version 5.4.0-150-generic) on Sat Mar 02 22:36:03 PST 2024
+INFO: [HLS 200-10] For user 'matthew' on host 'yangzi' (Linux_x86_64 version 5.4.0-150-generic) on Thu Mar 07 13:20:01 PST 2024
 INFO: [HLS 200-10] On os Ubuntu 18.04.5 LTS
 INFO: [HLS 200-10] In directory '/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top'
 Sourcing Tcl script 'top.tcl'
@@ -39,7 +39,7 @@ INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=0
 INFO: [HLS 200-1510] Running: config_export -format xo -ipname top 
 INFO: [HLS 200-1907] Replacing 'config_export -deadlock_detection=sim' with 'config_rtl -deadlock_detection=sim' in current solution file
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.073 GB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.073 GB.
 INFO: [HLS 200-10] Analyzing design file '/data/matthew/matmult_u200/src/block_mm_entry.cpp' ... 
 WARNING: [HLS 214-110] As the loop bound is not a constant or function argument, the compiler may not successfully process the dataflow loop (/data/matthew/matmult_u200/src/block_mm_entry.cpp:26:36)
 Resolution: For help on HLS 214-110 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-110.html
@@ -47,20 +47,14 @@ WARNING: [HLS 214-113] Either use an argument of the function or declare the var
 Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
 WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult_u200/src/block_mm_entry.cpp:30:25)
 Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
-WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult_u200/src/block_mm_entry.cpp:31:15)
-Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
-WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult_u200/src/block_mm_entry.cpp:31:24)
-Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
-WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult_u200/src/block_mm_entry.cpp:31:33)
-Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
-WARNING: [HLS 200-471] Dataflow form checks found 6 issue(s) in file /data/matthew/matmult_u200/src/block_mm_entry.cpp
+WARNING: [HLS 200-471] Dataflow form checks found 3 issue(s) in file /data/matthew/matmult_u200/src/block_mm_entry.cpp
 Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-471.html
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2.26 seconds. CPU system time: 0.8 seconds. Elapsed time: 3.08 seconds; current allocated memory: 1.074 GB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2.27 seconds. CPU system time: 0.78 seconds. Elapsed time: 3.03 seconds; current allocated memory: 1.074 GB.
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
 ERROR: [HLS 214-244] in function 'top(blockvec*, blockvec*, blockvec*)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order. (/data/matthew/matmult_u200/src/block_mm_entry.cpp:18:24)
 Resolution: For help on HLS 214-244 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-244.html
 ERROR: [HLS 200-1715] Encountered problem during source synthesis
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.68 seconds. CPU system time: 1.43 seconds. Elapsed time: 7.14 seconds; current allocated memory: 1.840 MB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.63 seconds. CPU system time: 1.35 seconds. Elapsed time: 6.98 seconds; current allocated memory: 1.809 MB.
 Pre-synthesis failed.
     while executing
 "source top.tcl"
@@ -68,5 +62,5 @@ Pre-synthesis failed.
     invoked from within
 "uplevel \#0 [list source $arg] "
 
-INFO: [HLS 200-112] Total CPU user time: 8.98 seconds. Total CPU system time: 2.28 seconds. Total elapsed time: 11.1 seconds; peak allocated memory: 1.074 GB.
-INFO: [Common 17-206] Exiting vitis_hls at Sat Mar  2 22:36:14 2024...
+INFO: [HLS 200-112] Total CPU user time: 9.04 seconds. Total CPU system time: 2.09 seconds. Total elapsed time: 10.94 seconds; peak allocated memory: 1.074 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Thu Mar  7 13:20:12 2024...

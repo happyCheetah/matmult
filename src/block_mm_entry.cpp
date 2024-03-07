@@ -28,7 +28,7 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array
 		// *** your code here *** //
 		loadDDR(A, B, pipe[0], pipe[1],SIZE);
-		blockmatmul(pipe[0], pipe[1], C_onchip, SIZE);
+		//blockmatmul(pipe_0, pipe_1, C_onchip, SIZE);
 		
 	}
 // Final goal:
