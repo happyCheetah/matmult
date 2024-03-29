@@ -5,7 +5,7 @@
           "label": "",
           "functionLabel": "",
           "id": "1",
-          "sourceFile": "\/data\/matthew\/matmult_u200\/u200\/hw_emu\/_x\/block_mm\/top\/top.tcl",
+          "sourceFile": "\/data\/matthew\/matmult\/u200\/hw_emu\/_x\/block_mm\/top\/top.tcl",
           "sourceLine": "27",
           "pragma": {
             "name": "TOP",

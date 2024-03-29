@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="top" LaunchDir="/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top" FlowId="Build_IP" FromStepId="vitis_hls" ToStepId="vitis_hls"/>
+	<Run Id="top" LaunchDir="/data/matthew/matmult/u200/hw_emu/_x/block_mm/top" FlowId="Build_IP" FromStepId="vitis_hls" ToStepId="vitis_hls"/>
 </Runs>
 

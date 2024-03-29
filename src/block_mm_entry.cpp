@@ -15,7 +15,7 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 	// #pragma HLS INTERFACE s_axilite port=return bundle=control
 	// #pragma HLS aggregate variable=C
 	//Stream<blockvec> pipe[2];
-	hls::stream<blockvec> pipe[2];
+	hls::stream<blockvec> pipe;
 	#pragma HLS STREAM variable=pipe depth=8
 	//pipe[0] and [1] are fifos used to chain together provider(load_DDR) and consumer(blockmatmul)
 	//pipe[0] for Arows, pipe[1] for Bcols
@@ -27,10 +27,8 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 	for (int it=0;it<n;it++){
 		#pragma HLS DATAFLOW
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array
-		// *** your code here *** //
-		loadDDR(A, B, pipe[0], B_buffer,SIZE);
-		//blockmatmul(pipe[0], pipe[1], C_onchip, SIZE);
-		blockmatmul(pipe[0], B_buffer, C_onchip, SIZE);
+		loadDDR(A, B, pipe, B_buffer,SIZE);
+		blockmatmul(pipe, B_buffer, C_onchip, SIZE);
 		
 	}
 // Final goal:

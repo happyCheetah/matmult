@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top'
+HD_PWD='/data/matthew/matmult/u200/hw_emu/_x/block_mm/top'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

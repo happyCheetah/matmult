@@ -1,4 +1,4 @@
-# 1 "/data/matthew/matmult_u200/src/block_mm_entry.cpp"
+# 1 "/data/matthew/matmult/src/block_mm_entry.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 375 "<built-in>" 3
@@ -155,8 +155,8 @@ extern "C" {
 
 }
 # 2 "<built-in>" 2
-# 1 "/data/matthew/matmult_u200/src/block_mm_entry.cpp" 2
-# 1 "/data/matthew/matmult_u200/src/block.h" 1
+# 1 "/data/matthew/matmult/src/block_mm_entry.cpp" 2
+# 1 "/data/matthew/matmult/src/block.h" 1
 
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/hls_stream.h" 1
 # 15 "/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/hls_stream.h"
@@ -289,7 +289,7 @@ class stream : public stream<__STREAM_T__, 0> {
 };
 }
 # 16 "/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/hls_stream.h" 2
-# 3 "/data/matthew/matmult_u200/src/block.h" 2
+# 3 "/data/matthew/matmult/src/block.h" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iostream" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iostream" 3
 
@@ -28390,7 +28390,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/data/matthew/matmult_u200/src/block.h" 2
+# 4 "/data/matthew/matmult/src/block.h" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip" 3
 
@@ -36684,7 +36684,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 5 "/data/matthew/matmult_u200/src/block.h" 2
+# 5 "/data/matthew/matmult/src/block.h" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/vector" 1 3
 # 59 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/vector" 3
 
@@ -40672,7 +40672,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 # 70 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/vector" 2 3
-# 6 "/data/matthew/matmult_u200/src/block.h" 2
+# 6 "/data/matthew/matmult/src/block.h" 2
 using namespace std;
 
 const int SIZE = 32;
@@ -40685,18 +40685,20 @@ typedef struct {
 
 
 
-void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, int it);
-void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blockvec C[], int it);
-# 2 "/data/matthew/matmult_u200/src/block_mm_entry.cpp" 2
+
+void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec Bcols[], int it);
+
+void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockvec C[], int it);
+# 2 "/data/matthew/matmult/src/block_mm_entry.cpp" 2
 
 
 
 
 int n = 8;
 __attribute__((sdx_kernel("top", 0))) void top(blockvec A[], blockvec B[],blockvec C[]){
-#line 27 "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl"
+#line 27 "/data/matthew/matmult/u200/hw_emu/_x/block_mm/top/top.tcl"
 #pragma HLSDIRECTIVE TOP name=top
-# 7 "/data/matthew/matmult_u200/src/block_mm_entry.cpp"
+# 7 "/data/matthew/matmult/src/block_mm_entry.cpp"
 
 
 #pragma HLS INTERFACE bram port=C storage_type=ram_2p
@@ -40708,21 +40710,23 @@ __attribute__((sdx_kernel("top", 0))) void top(blockvec A[], blockvec B[],blockv
 
 
 
- hls::stream<blockvec> pipe[2];
+ hls::stream<blockvec> pipe;
 #pragma HLS STREAM variable=pipe depth=8
 
 
 
  blockvec C_onchip[SIZE];
+ blockvec B_buffer[SIZE];
 
 
- VITIS_LOOP_26_1: for (int it=0;it<n;it++){
+ VITIS_LOOP_27_1: for (int it=0;it<n;it++){
 #pragma HLS DATAFLOW
 
 
- loadDDR(A, B, pipe[0], pipe[1],SIZE);
+ loadDDR(A, B, pipe, B_buffer,SIZE);
 
+  blockmatmul(pipe, B_buffer, C_onchip, SIZE);
 
  }
-# 45 "/data/matthew/matmult_u200/src/block_mm_entry.cpp"
+# 47 "/data/matthew/matmult/src/block_mm_entry.cpp"
 }

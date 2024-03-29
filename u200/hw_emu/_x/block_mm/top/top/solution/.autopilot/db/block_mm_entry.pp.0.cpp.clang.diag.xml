@@ -1,13 +1,13 @@
 <dict>
   <key>main-file</key>
-  <string>/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp</string>
+  <string>/data/matthew/matmult/u200/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp</string>
   <key>diagnostics</key>
   <array>
     <dict>
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
-      <string>/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl</string>
+      <string>/data/matthew/matmult/u200/hw_emu/_x/block_mm/top/top.tcl</string>
       <key>line</key>
       <integer>27</integer>
       <key>column</key>
@@ -23,7 +23,7 @@
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
-      <string>/data/matthew/matmult_u200/src/block_mm_entry.cpp</string>
+      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
       <key>line</key>
       <integer>9</integer>
       <key>column</key>
@@ -39,7 +39,7 @@
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
-      <string>/data/matthew/matmult_u200/src/block_mm_entry.cpp</string>
+      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
       <key>line</key>
       <integer>19</integer>
       <key>column</key>
@@ -55,9 +55,9 @@
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
-      <string>/data/matthew/matmult_u200/src/block_mm_entry.cpp</string>
+      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
       <key>line</key>
-      <integer>27</integer>
+      <integer>28</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

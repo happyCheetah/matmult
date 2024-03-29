@@ -1,16 +1,28 @@
 ---
-MainSourceFile:  /data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp
+MainSourceFile:  /data/matthew/matmult/u200/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp
 Diagnostics:     
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-7] As the loop bound is not a constant or function argument, the compiler may not successfully process the dataflow loop'
-    FileOffset:      '26:36'
-    FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
+    FileOffset:      '27:36'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '30:16'
-    FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
+    FileOffset:      '31:16'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '30:25'
-    FilePath:        /data/matthew/matmult_u200/src/block_mm_entry.cpp
+    FileOffset:      '31:22'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '33:15'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '33:21'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '33:31'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
 ...

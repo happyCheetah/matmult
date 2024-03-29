@@ -1,6 +1,6 @@
 <ENTRY>
 {
- "thisFile": "/data/matthew/matmult_u200/u200/hw_emu/block_mm.xo.compile_summary",
+ "thisFile": "/data/matthew/matmult/u200/hw_emu/block_mm.xo.compile_summary",
  "connectId": "",
  "serverToken": "",
  "timestamp": "0"
@@ -9,12 +9,12 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Thu Mar  7 13:19:47 2024",
- "timestampMillis": "1709846387549",
+ "dateTimestamp": "Fri Mar 29 13:25:36 2024",
+ "timestampMillis": "1711743936427",
  "buildStep": {
-  "cmdId": "2e80bd47-2f99-4fa7-a727-81a0f5ce2409",
+  "cmdId": "3d76f25a-a768-44a2-820f-0d7744e3e354",
   "name": "v++",
-  "logFile": "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/block_mm.steps.log",
+  "logFile": "/data/matthew/matmult/u200/hw_emu/_x/block_mm/block_mm.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw_emu --platform xilinx_u200_gen3x16_xdma_2_202110_1 --config ../../src/u200.cfg -k top -I../../src ../../src/block_mm_entry.cpp -o ./block_mm.xo ",
   "args": [
    "-c",
@@ -33,21 +33,21 @@
   ],
   "iniFiles": [
    {
-    "path": "/data/matthew/matmult_u200/src/u200.cfg",
+    "path": "/data/matthew/matmult/src/u200.cfg",
     "content": "debug=1\nsave-temps=1\n\n[connectivity]\nnk=top:1:top_1\nsp=top_1.A:DDR[1]\nsp=top_1.B:DDR[2]\nsp=top_1.C:DDR[1]\n\n[profile]\ndata=all:all:all\n"
    }
   ],
-  "cwd": "/data/matthew/matmult_u200/u200/hw_emu"
+  "cwd": "/data/matthew/matmult/u200/hw_emu"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Mar  7 13:19:47 2024",
- "timestampMillis": "1709846387550",
+ "dateTimestamp": "Fri Mar 29 13:25:36 2024",
+ "timestampMillis": "1711743936428",
  "status": {
-  "cmdId": "2e80bd47-2f99-4fa7-a727-81a0f5ce2409",
+  "cmdId": "3d76f25a-a768-44a2-820f-0d7744e3e354",
   "state": "CS_RUNNING"
  }
 }
@@ -55,8 +55,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Thu Mar  7 13:19:58 2024",
- "timestampMillis": "1709846398102",
+ "dateTimestamp": "Fri Mar 29 13:25:46 2024",
+ "timestampMillis": "1711743946957",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u200_gen3x16_xdma_2_202110_1.xpfm",
   "hardwareDsa": "hw.xsa",
@@ -70,12 +70,12 @@
     "base": {
      "type": "KERNEL",
      "name": "top",
-     "file": "/data/matthew/matmult_u200/u200/hw_emu/block_mm.xo",
+     "file": "/data/matthew/matmult/u200/hw_emu/block_mm.xo",
      "reports": [],
      "uuid": ""
     },
     "sources": [
-     "/data/matthew/matmult_u200/src/block_mm_entry.cpp"
+     "/data/matthew/matmult/src/block_mm_entry.cpp"
     ],
     "psSources": [],
     "cuNames": [],
@@ -91,32 +91,32 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Thu Mar  7 13:19:58 2024",
- "timestampMillis": "1709846398105",
+ "dateTimestamp": "Fri Mar 29 13:25:46 2024",
+ "timestampMillis": "1711743946960",
  "buildStep": {
-  "cmdId": "67062d28-23f9-43d7-8484-4c27164c4b45",
+  "cmdId": "a080a54c-7b33-4a92-a91c-96daa87a009e",
   "name": "vitis_hls",
-  "logFile": "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/vitis_hls.log",
-  "commandLine": "vitis_hls -f /data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl -messageDb vitis_hls.pb",
+  "logFile": "/data/matthew/matmult/u200/hw_emu/_x/block_mm/top/vitis_hls.log",
+  "commandLine": "vitis_hls -f /data/matthew/matmult/u200/hw_emu/_x/block_mm/top/top.tcl -messageDb vitis_hls.pb",
   "args": [
    "vitis_hls",
    "-f",
-   "/data/matthew/matmult_u200/u200/hw_emu/_x/block_mm/top/top.tcl",
+   "/data/matthew/matmult/u200/hw_emu/_x/block_mm/top/top.tcl",
    "-messageDb",
    "vitis_hls.pb"
   ],
   "iniFiles": [],
-  "cwd": "/data/matthew/matmult_u200/u200/hw_emu"
+  "cwd": "/data/matthew/matmult/u200/hw_emu"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Mar  7 13:19:58 2024",
- "timestampMillis": "1709846398105",
+ "dateTimestamp": "Fri Mar 29 13:25:46 2024",
+ "timestampMillis": "1711743946961",
  "status": {
-  "cmdId": "67062d28-23f9-43d7-8484-4c27164c4b45",
+  "cmdId": "a080a54c-7b33-4a92-a91c-96daa87a009e",
   "state": "CS_RUNNING"
  }
 }
@@ -124,10 +124,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Mar  7 13:20:12 2024",
- "timestampMillis": "1709846412389",
+ "dateTimestamp": "Fri Mar 29 13:26:01 2024",
+ "timestampMillis": "1711743961414",
  "status": {
-  "cmdId": "67062d28-23f9-43d7-8484-4c27164c4b45",
+  "cmdId": "a080a54c-7b33-4a92-a91c-96daa87a009e",
   "state": "CS_FAILED"
  }
 }
@@ -135,10 +135,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Mar  7 13:20:12 2024",
- "timestampMillis": "1709846412392",
+ "dateTimestamp": "Fri Mar 29 13:26:01 2024",
+ "timestampMillis": "1711743961417",
  "status": {
-  "cmdId": "2e80bd47-2f99-4fa7-a727-81a0f5ce2409",
+  "cmdId": "3d76f25a-a768-44a2-820f-0d7744e3e354",
   "state": "CS_FAILED"
  }
 }
@@ -146,10 +146,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Mar  7 13:20:12 2024",
- "timestampMillis": "1709846412517",
+ "dateTimestamp": "Fri Mar 29 13:26:01 2024",
+ "timestampMillis": "1711743961542",
  "report": {
-  "path": "/data/matthew/matmult_u200/u200/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html",
+  "path": "/data/matthew/matmult/u200/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html",
   "name": "",
   "fileType": "HTML",
   "reportType": "GLOBAL_RULECHECK_GUIDANCE",
@@ -160,10 +160,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Mar  7 13:20:12 2024",
- "timestampMillis": "1709846412518",
+ "dateTimestamp": "Fri Mar 29 13:26:01 2024",
+ "timestampMillis": "1711743961543",
  "report": {
-  "path": "/data/matthew/matmult_u200/u200/hw_emu/_x/v++_compile_block_mm_guidance.pb3",
+  "path": "/data/matthew/matmult/u200/hw_emu/_x/v++_compile_block_mm_guidance.pb3",
   "name": "",
   "fileType": "BINARY_PROTOBUF",
   "reportType": "GLOBAL_RULECHECK_GUIDANCE",
