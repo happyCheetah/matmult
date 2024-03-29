@@ -29,7 +29,7 @@ void loadB(blockvec B[], blockvec B_buffer[], int it){
 //		Bcols.write(B[i]);
 //	}
 //}	
-void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec Bcols[], int it){
+void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec &Bcols[], int it){
 	//Assumption 1: Arows and Bcols are matrix tiles of size SIZE*BLOCK_SIZE(e.g. blockvec size) that are on-chip
 	//Assumption 2: A and B are blockvec arrays both stored in row-major order
 	#pragma HLS aggregate variable=A
