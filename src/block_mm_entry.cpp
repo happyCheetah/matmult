@@ -21,15 +21,16 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 	//pipe[0] for Arows, pipe[1] for Bcols
 
 	blockvec C_onchip[SIZE];
+	blockvec B_buffer[SIZE];
 	
 	//"it" is a counter to keep track of the tile/block indices in different kernel calls
 	for (int it=0;it<n;it++){
 		#pragma HLS DATAFLOW
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array
 		// *** your code here *** //
-		loadDDR(A, B, pipe[0], pipe[1],SIZE);
+		loadDDR(A, B, pipe[0], B_buffer,SIZE);
 		//blockmatmul(pipe[0], pipe[1], C_onchip, SIZE);
-		blockmatmul(A, B, C_onchip, SIZE);
+		blockmatmul(pipe[0], B_buffer, C_onchip, SIZE);
 		
 	}
 // Final goal:
