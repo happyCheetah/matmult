@@ -29,7 +29,7 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 		// *** your code here *** //
 		loadDDR(A, B, pipe[0], pipe[1],SIZE);
 		//blockmatmul(pipe[0], pipe[1], C_onchip, SIZE);
-		blockmatmul(pipe[0], B, C_onchip, SIZE);
+		blockmatmul(A, B, C_onchip, SIZE);
 		
 	}
 // Final goal:
