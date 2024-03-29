@@ -29,13 +29,13 @@ void loadB(blockvec B[], blockvec B_buffer[], int it){
 //		Bcols.write(B[i]);
 //	}
 //}	
-void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, int it){
+void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec Bcols[], int it){
 	//Assumption 1: Arows and Bcols are matrix tiles of size SIZE*BLOCK_SIZE(e.g. blockvec size) that are on-chip
 	//Assumption 2: A and B are blockvec arrays both stored in row-major order
-	//#pragma HLS aggregate variable=A
+	#pragma HLS aggregate variable=A
 	#pragma HLS aggregate variable=B
 
-	//loadA(A, Arows, it);
+	loadA(A, Arows, it);
 	loadB(B, Bcols, it);
 }
 
@@ -45,7 +45,6 @@ void blockmatmul(hls::stream<blockvec> &Arows[], blockvec Bcols[], blockvec C[],
 	//Fill in the code for outer product between a row-tile of A and a column-tile of B to produce a blockmat of C
 	//n means row index in Arows
 	//m means col index in bcols 
-	//
 	
 	blockvec row, col;
 
