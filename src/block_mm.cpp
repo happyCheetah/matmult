@@ -40,7 +40,7 @@ void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec 
 }
 
 // void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockmat & C, int it) {
-void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockvec C[], int it) {
+void blockmatmul(blockvec Arows[], blockvec Bcols[], blockvec C[], int it) {
 #pragma HLS aggregate variable=C
 	//Fill in the code for outer product between a row-tile of A and a column-tile of B to produce a blockmat of C
 	//n means row index in Arows
@@ -50,7 +50,8 @@ void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockvec C[], i
 	blockvec row, col;
 
 	for(int n=0;n<SIZE;n++ ){
-		row = Arows.read();
+		//row = Arows.read();
+		row = Arows[n];
 		for (int k=0;k<SIZE;k++){
 		#pragma HLS PIPELINE
 			//Fully unrolled loop 
