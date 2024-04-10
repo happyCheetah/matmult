@@ -3,6 +3,8 @@
 void loadA(blockvec A[],  hls::stream<blockvec> &Arows, int it){
 	//identify row-tile index in A
 	//read the tile from A[] in DDR to Arows
+	#pragma HLS aggregate variable=A
+	#pragma HLS aggregate variable=Arows
 	for (int i = 0; i < SIZE; i++){
 		#pragma HLS PIPELINE
 		Arows.write(A[i]);
@@ -12,6 +14,8 @@ void loadA(blockvec A[],  hls::stream<blockvec> &Arows, int it){
 
 // loadB with buffer
 void loadB(blockvec B[], blockvec B_buffer[], int it){
+	#pragma HLS aggregate variable=B
+	#pragma HLS aggregate variable=B_buffer
 	for (int i = 0; i < SIZE; i++){
 		#pragma HLS PIPELINE
 		B_buffer[i] = B[i];
@@ -33,7 +37,9 @@ void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec 
 	//Assumption 1: Arows and Bcols are matrix tiles of size SIZE*BLOCK_SIZE(e.g. blockvec size) that are on-chip
 	//Assumption 2: A and B are blockvec arrays both stored in row-major order
 	#pragma HLS aggregate variable=A
+	#pragma HLS aggregate variable=Arows
 	#pragma HLS aggregate variable=B
+	#pragma HLS aggregate variable=Bcols
 
 	//loadA(A, Arows, it);
 	//loadB(B, Bcols, it);
@@ -47,7 +53,9 @@ void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec 
 
 // void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockmat & C, int it) {
 void blockmatmul(hls::stream<blockvec> &Arows[], blockvec Bcols[], blockvec C[], int it) {
-#pragma HLS aggregate variable=C
+	#pragma HLS aggregate variable=C
+	#pragma HLS aggregate variable=Arows
+	#pragma HLS aggregate variable=Bcols
 	//Fill in the code for outer product between a row-tile of A and a column-tile of B to produce a blockmat of C
 	//n means row index in Arows
 	//m means col index in bcols 
