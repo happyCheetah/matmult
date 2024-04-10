@@ -8,12 +8,14 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 	//Assume C is buffered on-chip
 	#pragma HLS INTERFACE bram port=C storage_type=ram_2p
 	//Put DDR interfacing directives for A & B
-	// #pragma HLS INTERFACE m_axi port=A bundle=gmem0 offset=slave
-	// #pragma HLS INTERFACE m_axi port=B bundle=gmem1 offset=slave
-	// #pragma HLS INTERFACE s_axilite port=A bundle=control
-	// #pragma HLS INTERFACE s_axilite port=B bundle=control
+	#pragma HLS INTERFACE m_axi port=A bundle=gmem0 offset=slave
+	#pragma HLS INTERFACE m_axi port=B bundle=gmem1 offset=slave
+	#pragma HLS INTERFACE s_axilite port=A bundle=control
+	#pragma HLS INTERFACE s_axilite port=B bundle=control
 	// #pragma HLS INTERFACE s_axilite port=return bundle=control
-	// #pragma HLS aggregate variable=C
+	#pragma HLS aggregate variable=C
+	#pragma HLS aggregate variable=A
+	#pragma HLS aggregate variable=B
 	//Stream<blockvec> pipe[2];
 	hls::stream<blockvec> pipe;
 	#pragma HLS STREAM variable=pipe depth=8
