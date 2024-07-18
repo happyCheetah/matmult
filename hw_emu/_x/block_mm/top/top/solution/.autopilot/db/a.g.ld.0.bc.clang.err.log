@@ -1,2 +1,0 @@
-error: /data/matthew/matmult/src/block_mm_entry.cpp:18:24: in function 'top(blockvec*, blockvec*, blockvec*)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order.
-error: Fail to Synthesize.

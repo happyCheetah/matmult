@@ -40675,56 +40675,48 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 6 "/data/matthew/matmult/src/block.h" 2
 using namespace std;
 
-const int SIZE = 32;
+const int SIZE = 1024;
+const int BLOCK_SIZE = 16;
 
 typedef struct {
- int a[SIZE];
+ int a[BLOCK_SIZE];
 } blockvec;
 
+typedef struct {
+ int out[BLOCK_SIZE][BLOCK_SIZE];
+} blockmat;
 
-
-
-
-
-void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec Bcols[], int it);
-
-void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockvec C[], int it);
+void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, int it);
+void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blockmat &ABpartial, int it);
 # 2 "/data/matthew/matmult/src/block_mm_entry.cpp" 2
 
-
-
-
-int n = 8;
-__attribute__((sdx_kernel("top", 0))) void top(blockvec A[], blockvec B[],blockvec C[]){
-#line 27 "/data/matthew/matmult/hw_emu/_x/block_mm/top/top.tcl"
-#pragma HLSDIRECTIVE TOP name=top
-# 7 "/data/matthew/matmult/src/block_mm_entry.cpp"
-
+void top(blockvec A[], blockvec B[]){
 
 #pragma HLS INTERFACE bram port=C storage_type=ram_2p
 
-
-
-
-
-
-
-
- hls::stream<blockvec> pipe;
+#pragma HLS INTERFACE m_axi port=A bundle=gmem0 offset=slave
+#pragma HLS INTERFACE m_axi port=B bundle=gmem1 offset=slave
+#pragma HLS INTERFACE s_axilite port=A bundle=control
+#pragma HLS INTERFACE s_axilite port=B bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+#pragma HLS aggregate variable=C
+ hls::stream<blockvec> pipe[2];
 #pragma HLS STREAM variable=pipe depth=8
 
 
 
- blockvec C_onchip[SIZE];
- blockvec B_buffer[SIZE];
 
 
- VITIS_LOOP_27_1: for (int it=0;it<n;it++){
+
+
+ blockmat C[SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE)];
+ for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
 #pragma HLS DATAFLOW
 
- loadDDR(A, B, pipe, B_buffer,SIZE);
-  blockmatmul(pipe, B_buffer, C_onchip, SIZE);
 
+ loadDDR(A, B, pipe[0], pipe[1], it);
+  blockmatmul(pipe[0], pipe[1], C, it);
  }
-# 45 "/data/matthew/matmult/src/block_mm_entry.cpp"
+
+
 }

@@ -1,0 +1,3 @@
+/data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp:40704:48: error: ram_2p is not valid value for option interface BRAM's option 'storage_type' [clang-diagnostic-error]
+#pragma HLS INTERFACE bram port=C storage_type=ram_2p
+                                               ^

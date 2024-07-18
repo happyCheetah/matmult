@@ -1,0 +1,9 @@
+---
+MainSourceFile:  /data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'ram_2p is not valid value for option interface BRAM''s option ''storage_type'''
+    FileOffset:      9
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+    Replacements:    
+...

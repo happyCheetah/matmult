@@ -1,0 +1,22 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /data/matthew/matmult/hw_emu/_x/reports/block_mm
+	Log files: /data/matthew/matmult/hw_emu/_x/logs/block_mm
+INFO: [v++ 60-1548] Creating build summary session with primary output /data/matthew/matmult/hw_emu/block_mm.xo.compile_summary, at Sat Jul  6 22:16:29 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/data/matthew/matmult/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html', at Sat Jul  6 22:16:29 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1/xilinx_u200_gen3x16_xdma_2_202110_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_gen3x16_xdma_2_202110_1
+INFO: [v++ 60-242] Creating kernel: 'top'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: top Log file: /data/matthew/matmult/hw_emu/_x/block_mm/top/vitis_hls.log :
+ERROR: [v++ 214-244] in function 'top(blockvec*, blockvec*, blockvec*)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order. (/data/matthew/matmult/src/block_mm_entry.cpp:20:24)
+Resolution: For help on HLS 214-244 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-244.html
+ERROR: [v++ 200-1715] Encountered problem during source synthesis
+ERROR: [v++ 60-300] Failed to build kernel(ip) top, see log for details: /data/matthew/matmult/hw_emu/_x/block_mm/top/vitis_hls.log
+ERROR: [v++ 60-773] In '/data/matthew/matmult/hw_emu/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 214-244] in function 'top(blockvec*, blockvec*, blockvec*)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order. (/data/matthew/matmult/src/block_mm_entry.cpp:20:24)
+ERROR: [v++ 60-773] In '/data/matthew/matmult/hw_emu/_x/block_mm/top/vitis_hls.log', caught Tcl error: ERROR: [HLS 200-1715] Encountered problem during source synthesis
+ERROR: [v++ 60-599] Kernel compilation failed to complete
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1653] Closing dispatch client.

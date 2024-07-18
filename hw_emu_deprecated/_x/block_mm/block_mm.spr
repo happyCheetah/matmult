@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="block_mm" dir="">
+  <FileSets>
+    <FileSet Name="kernel_top" Type="DesignSrcs">
+      <File Path="/data/matthew/matmult/src/block_mm_entry.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

@@ -1,0 +1,173 @@
+<ENTRY>
+{
+ "thisFile": "/data/matthew/matmult/hw_emu/block_mm.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Apr 11 02:26:50 2024",
+ "timestampMillis": "1712827610667",
+ "buildStep": {
+  "cmdId": "b92dd257-325a-4118-92cd-56241147ac4c",
+  "name": "v++",
+  "logFile": "/data/matthew/matmult/hw_emu/_x/block_mm/block_mm.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw_emu --platform xilinx_u200_gen3x16_xdma_2_202110_1 --config ../src/u200.cfg -k top -I../src -o ./block_mm.xo ../src/block_mm_entry.cpp ",
+  "args": [
+   "-c",
+   "-t",
+   "hw_emu",
+   "--platform",
+   "xilinx_u200_gen3x16_xdma_2_202110_1",
+   "--config",
+   "../src/u200.cfg",
+   "-k",
+   "top",
+   "-I../src",
+   "-o",
+   "./block_mm.xo",
+   "../src/block_mm_entry.cpp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/data/matthew/matmult/src/u200.cfg",
+    "content": "debug=1\nsave-temps=1\n\n[connectivity]\nnk=top:1:top_1\nsp=top_1.A:DDR[1]\nsp=top_1.B:DDR[2]\nsp=top_1.C:DDR[1]\n\n[profile]\ndata=all:all:all\n"
+   }
+  ],
+  "cwd": "/data/matthew/matmult/hw_emu"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 11 02:26:50 2024",
+ "timestampMillis": "1712827610668",
+ "status": {
+  "cmdId": "b92dd257-325a-4118-92cd-56241147ac4c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Apr 11 02:27:01 2024",
+ "timestampMillis": "1712827621207",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u200_gen3x16_xdma_2_202110_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u200_gen3x16_xdma_2_202110_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "top",
+     "file": "/data/matthew/matmult/hw_emu/block_mm.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/data/matthew/matmult/src/block_mm_entry.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2022.2. SW Build 3671529 on 2022-10-13-17:52:11"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 11 02:27:01 2024",
+ "timestampMillis": "1712827621210",
+ "buildStep": {
+  "cmdId": "2aa6b097-4d2f-488c-8a77-415ee18c22ae",
+  "name": "vitis_hls",
+  "logFile": "/data/matthew/matmult/hw_emu/_x/block_mm/top/vitis_hls.log",
+  "commandLine": "vitis_hls -f /data/matthew/matmult/hw_emu/_x/block_mm/top/top.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/data/matthew/matmult/hw_emu/_x/block_mm/top/top.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/data/matthew/matmult/hw_emu"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 11 02:27:01 2024",
+ "timestampMillis": "1712827621210",
+ "status": {
+  "cmdId": "2aa6b097-4d2f-488c-8a77-415ee18c22ae",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 11 02:27:15 2024",
+ "timestampMillis": "1712827635189",
+ "status": {
+  "cmdId": "2aa6b097-4d2f-488c-8a77-415ee18c22ae",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 11 02:27:15 2024",
+ "timestampMillis": "1712827635192",
+ "status": {
+  "cmdId": "b92dd257-325a-4118-92cd-56241147ac4c",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 11 02:27:15 2024",
+ "timestampMillis": "1712827635315",
+ "report": {
+  "path": "/data/matthew/matmult/hw_emu/_x/reports/block_mm/v++_compile_block_mm_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 11 02:27:15 2024",
+ "timestampMillis": "1712827635316",
+ "report": {
+  "path": "/data/matthew/matmult/hw_emu/_x/v++_compile_block_mm_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,6 +1,6 @@
 #include "block.h"
 
-void top(blockvec A[], blockvec B[],blockmat C[]){
+void top(blockvec A[], blockvec B[], blockmat C[]){
 	//Assume C is buffered on-chip
 	#pragma HLS INTERFACE bram port=C storage_type=ram_2p
 	//Put DDR interfacing directives for A & B
@@ -10,7 +10,7 @@ void top(blockvec A[], blockvec B[],blockmat C[]){
 	#pragma HLS INTERFACE s_axilite port=B bundle=control
 	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS aggregate variable=C
-	Stream<blockvec> pipe[2];
+	hls::stream<blockvec> pipe[2];
 	#pragma HLS STREAM variable=pipe depth=8
 	//pipe[0] and [1] are fifos used to chain together provider(load_DDR) and consumer(blockmatmul)
 	//pipe[0] for Arows, pipe[1] for Bcols
@@ -19,7 +19,7 @@ void top(blockvec A[], blockvec B[],blockmat C[]){
 	//it = tracks what sub block we are currently on 
 
 	//
-	blockmat C[SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE)];
+	//blockmat C[SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE)];
 	for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
 		#pragma HLS DATAFLOW
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array

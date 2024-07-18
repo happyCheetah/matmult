@@ -1,0 +1,39 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/hw_emu/_x/block_mm/top/top.tcl:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="bram port=C storage_type=ram_2p" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A bundle=gmem0 offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=B bundle=gmem1 offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=A bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=B bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=C" ARG_PragmaType="aggregate" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=A" ARG_PragmaType="aggregate" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=B" ARG_PragmaType="aggregate" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pipe depth=8" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-244" msg_severity="ERROR" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:20:24" msg_body="in function 'top(blockvec*, blockvec*, blockvec*)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order.">
+        <args Function="top(blockvec*, blockvec*, blockvec*)" Name="islist pipe pipe"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

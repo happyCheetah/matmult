@@ -1,0 +1,3 @@
+
+Ù
+v++_compile_block_mm$966555ab-d681-4868-bb2f-3d1765dc45e0"š/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop "run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}" -c -t hw_emu --platform xilinx_u200_gen3x16_xdma_2_202110_1 --config ../src/u200.cfg -k top -I../src -o ./block_mm.xo ../src/block_mm_entry.cpp 

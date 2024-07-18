@@ -1,24 +1,21 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-110" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:27:36" msg_body="As the loop bound is not a constant or function argument, the compiler may not successfully process the dataflow loop"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:30:16" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:30:22" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:31:15" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:31:21" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:31:31" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/hw_emu/_x/block_mm/top/top.tcl:27:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="" msg_id="207-3776" msg_severity="ERROR" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:5:33" msg_body="use of undeclared identifier 'C'">
+        <args/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:9:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="bram port=C storage_type=ram_2p" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="" msg_id="207-3776" msg_severity="ERROR" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:12:32" msg_body="use of undeclared identifier 'C'">
+        <args/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:19:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pipe depth=8" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="" msg_id="207-3339" msg_severity="ERROR" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:28:3" msg_body="no matching function for call to 'blockmatmul'">
+        <args/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:28:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="top" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="" msg_id="207-4378" msg_severity="INFO" msg_loc="/data/matthew/matmult/src/block.h:20:6" msg_body="candidate function not viable: no known conversion from 'blockmat [4096]' to 'blockmat &amp;' for 3rd argument">
+        <args/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-244" msg_severity="ERROR" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:18:24" msg_body="in function 'top(blockvec*, blockvec*, blockvec*)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order.">
-        <args Function="top(blockvec*, blockvec*, blockvec*)" Name="islist pipe pipe"/>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5544" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:5:33" msg_body="invalid variable expr">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5544" msg_severity="WARNING" msg_loc="/data/matthew/matmult/src/block_mm_entry.cpp:12:32" msg_body="invalid variable expr">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

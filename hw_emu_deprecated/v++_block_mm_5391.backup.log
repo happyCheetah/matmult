@@ -1,0 +1,7 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /data/matthew/matmult/hw_emu/_x/reports/block_mm
+	Log files: /data/matthew/matmult/hw_emu/_x/logs/block_mm
+ERROR: [v++ 60-1620] File does not exist: ../../src/u200.cfg
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1662] Stopping dispatch session having empty uuid.
+INFO: [v++ 60-1653] Closing dispatch client.
