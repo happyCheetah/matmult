@@ -1,83 +1,77 @@
 #include "block.h"
 
+//complete
 void loadA(blockvec A[],  hls::stream<blockvec> &Arows, int it){
 	//identify row-tile index in A
+	int A_tile_index = int(it/(SIZE/BLOCK_SIZE));
 	//read the tile from A[] in DDR to Arows
-	#pragma HLS aggregate variable=A
-	#pragma HLS aggregate variable=Arows
 	for (int i = 0; i < SIZE; i++){
 		#pragma HLS PIPELINE
+		//Arows.write(A[/* *** your code here *** */]);
 		Arows.write(A[i]);
 	}
 }
 
-
-// loadB with buffer
-void loadB(blockvec B[], blockvec B_buffer[], int it){
-	#pragma HLS aggregate variable=B
-	#pragma HLS aggregate variable=B_buffer
+//complete
+void loadB(blockvec B[], hls::stream<blockvec> &Bcols, int it){
+	//identify column-tile index in B
+	int B_tile_index = it%(SIZE/BLOCK_SIZE);
+	//read the tile from B[] in DDR to Bcols
 	for (int i = 0; i < SIZE; i++){
 		#pragma HLS PIPELINE
-		B_buffer[i] = B[i];
+		//Bcols.write(B[/* *** your code here *** */]);
+		Bcols.write(B[i]);
 	}
 }
 
-// ORIGINAL loadB
-////lead into blockvec B_buffer[]
-//void loadB(blockvec B[], hls::stream<blockvec> &Bcols, int it){
-//	//identify column-tile index in B
-//	int B_tile_index = it%(SIZE/BLOCK_SIZE);
-//	//read the tile from B[] in DDR to Bcols
-//	for (int i = 0; i < SIZE; i++){
-//		#pragma HLS PIPELINE
-//		Bcols.write(B[i]);
-//	}
-//}	
-void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, blockvec &Bcols[], int it){
+//complete
+void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, int it){
 	//Assumption 1: Arows and Bcols are matrix tiles of size SIZE*BLOCK_SIZE(e.g. blockvec size) that are on-chip
 	//Assumption 2: A and B are blockvec arrays both stored in row-major order
 	#pragma HLS aggregate variable=A
-	#pragma HLS aggregate variable=Arows
 	#pragma HLS aggregate variable=B
-	#pragma HLS aggregate variable=Bcols
 
-	//loadA(A, Arows, it);
-	//loadB(B, Bcols, it);
-	for (int i=0; i<SIZE; i++){
-		#pragma HLS PIPELINE
-		blockvec arow = A[i];
-		Arows.write(arow);
-		B_buffer[i] = B[i];
-	}
+	loadA(A, Arows, it);
+	loadB(B, Bcols, it);
 }
 
-// void blockmatmul(hls::stream<blockvec> &Arows, blockvec Bcols[], blockmat & C, int it) {
-void blockmatmul(hls::stream<blockvec> &Arows[], blockvec Bcols[], blockvec C[], int it) {
-	#pragma HLS aggregate variable=C
-	#pragma HLS aggregate variable=Arows
-	#pragma HLS aggregate variable=Bcols
+void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blockmat & C, int it) {
+#pragma HLS aggregate variable=C
 	//Fill in the code for outer product between a row-tile of A and a column-tile of B to produce a blockmat of C
-	//n means row index in Arows
-	//m means col index in bcols 
-	
-	blockvec row, col;
+	//pipeline the outer loop and fully unroll inner loops
+	//read a blockvec from column-tile of B when needed using "Bcols.read()"
+	//You can use "#pragma HLS dependence variable=C inter false" to resolve false dependency
 
-	for(int n=0;n<SIZE;n++ ){
-		row = Arows.read();
-		for (int k=0;k<SIZE;k++){
-		#pragma HLS PIPELINE
-			//Fully unrolled loop 
-			for(int m=0;m<SIZE;m++){
-			#pragma HLS unroll
-				col = Bcols[m];
-				//C.out([n*SIZE+m]) = Arows[n*SIZE+k] * Bcols[k*SIZE+m];
-				// C.out[n*SIZE+m] += row.a[k] * col.a[k];
-				C[n].a[m] += row.a[k] * col.a[k];
+	
+
+	int counter = it % (SIZE/BLOCK_SIZE);
+	static int A_buffer[BLOCK_SIZE][SIZE];
+
+	if (counter==0){
+		loadA: for (int i = 0; i < SIZE; i++){
+			//tempA contains a[block_size]
+			blockvec tempA = Arows.read();
+			for (int j = 0; j < BLOCKSIZE; j++){
+				A_buffer[j][i] = tempA.a[j]; 
 			}
 		}
 	}
-	//read a blockvec from column-tile of B when needed using "Bcols.read()"
-	//You can use "#pragma HLS dependence variable=C inter false" to resolve false dependency
+
+	int AB[BLOCK_SIZE][BLOCK_SIZE] = {0};
+	partialsum: for(int k = 0; k < SIZE; k++){
+		blockvec tempB = Bcols.read(); 
+		for(int i = 0; i < BLOCK_SIZE; i++){
+			for(int j = 0; j < BLOCK_SIZE; j++){
+				AB[i][j] = AB[i][j] + A_buffer[i][k] * tempB.a[j];
+			}
+		}
+	}
+
+	output: for(int i = 0; i < BLOCK_SIZE; i++){
+		for(int j = 0; j < BLOCK_SIZE; j++){
+			C.out[i][j] = AB[i][j]; 
+		}
+	}
 }
 
 
