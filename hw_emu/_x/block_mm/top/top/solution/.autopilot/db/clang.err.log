@@ -1,15 +1,4 @@
-/data/matthew/matmult/src/block_mm_entry.cpp:5:33: error: use of undeclared identifier 'C'
+/data/matthew/matmult/src/block_mm_entry.cpp:5:33: warning: Unsupported interface port data type in '#pragma HLS interface bram' [-Wignored-hls-pragmas]
 #pragma HLS INTERFACE bram port=C storage_type=ram_2p
                                 ^
-/data/matthew/matmult/src/block_mm_entry.cpp:5:33: warning: invalid variable expr  [-Winvalid-hls-pragmas]
-/data/matthew/matmult/src/block_mm_entry.cpp:12:32: error: use of undeclared identifier 'C'
-#pragma HLS aggregate variable=C
-                               ^
-/data/matthew/matmult/src/block_mm_entry.cpp:12:32: warning: invalid variable expr  [-Winvalid-hls-pragmas]
-/data/matthew/matmult/src/block_mm_entry.cpp:28:3: error: no matching function for call to 'blockmatmul'
-  blockmatmul(pipe[0], pipe[1], C, it);
-  ^~~~~~~~~~~
-/data/matthew/matmult/src/block.h:20:6: note: candidate function not viable: no known conversion from 'blockmat [4096]' to 'blockmat &' for 3rd argument
-void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blockmat &ABpartial, int it);
-     ^
-2 warnings and 3 errors generated.
+1 warning generated.

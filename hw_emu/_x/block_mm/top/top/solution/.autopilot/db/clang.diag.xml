@@ -5,20 +5,6 @@
   <array>
     <dict>
       <key>level</key>
-      <string>error</string>
-      <key>filename</key>
-      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
-      <key>line</key>
-      <integer>5</integer>
-      <key>column</key>
-      <integer>33</integer>
-      <key>message</key>
-      <string>use of undeclared identifier &apos;C&apos;</string>
-      <key>ID</key>
-      <integer>3776</integer>
-    </dict>
-    <dict>
-      <key>level</key>
       <string>warning</string>
       <key>filename</key>
       <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
@@ -27,69 +13,11 @@
       <key>column</key>
       <integer>33</integer>
       <key>message</key>
-      <string>invalid variable expr </string>
+      <string>Unsupported interface port data type in &apos;#pragma HLS interface bram&apos;</string>
       <key>ID</key>
-      <integer>5544</integer>
+      <integer>5557</integer>
       <key>WarningOption</key>
-      <string>invalid-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>error</string>
-      <key>filename</key>
-      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
-      <key>line</key>
-      <integer>12</integer>
-      <key>column</key>
-      <integer>32</integer>
-      <key>message</key>
-      <string>use of undeclared identifier &apos;C&apos;</string>
-      <key>ID</key>
-      <integer>3776</integer>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
-      <key>line</key>
-      <integer>12</integer>
-      <key>column</key>
-      <integer>32</integer>
-      <key>message</key>
-      <string>invalid variable expr </string>
-      <key>ID</key>
-      <integer>5544</integer>
-      <key>WarningOption</key>
-      <string>invalid-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>error</string>
-      <key>filename</key>
-      <string>/data/matthew/matmult/src/block_mm_entry.cpp</string>
-      <key>line</key>
-      <integer>28</integer>
-      <key>column</key>
-      <integer>3</integer>
-      <key>message</key>
-      <string>no matching function for call to &apos;blockmatmul&apos;</string>
-      <key>ID</key>
-      <integer>3339</integer>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>note</string>
-      <key>filename</key>
-      <string>/data/matthew/matmult/src/block.h</string>
-      <key>line</key>
-      <integer>20</integer>
-      <key>column</key>
-      <integer>6</integer>
-      <key>message</key>
-      <string>candidate function not viable: no known conversion from &apos;blockmat [4096]&apos; to &apos;blockmat &amp;&apos; for 3rd argument</string>
-      <key>ID</key>
-      <integer>4378</integer>
+      <string>ignored-hls-pragmas</string>
     </dict>
   </array>
 </dict>

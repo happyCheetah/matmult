@@ -52,6 +52,7 @@ void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blo
 			//tempA contains a[block_size]
 			blockvec tempA = Arows.read();
 			for (int j = 0; j < BLOCKSIZE; j++){
+				#pragma HLS PIPELINE II=1
 				A_buffer[j][i] = tempA.a[j]; 
 			}
 		}
@@ -59,6 +60,7 @@ void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blo
 
 	int AB[BLOCK_SIZE][BLOCK_SIZE] = {0};
 	partialsum: for(int k = 0; k < SIZE; k++){
+		#pragma HLS PIPELINE
 		blockvec tempB = Bcols.read(); 
 		for(int i = 0; i < BLOCK_SIZE; i++){
 			for(int j = 0; j < BLOCK_SIZE; j++){

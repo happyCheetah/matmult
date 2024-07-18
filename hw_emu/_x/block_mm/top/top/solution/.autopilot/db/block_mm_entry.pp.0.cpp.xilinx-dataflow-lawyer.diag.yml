@@ -1,0 +1,24 @@
+---
+MainSourceFile:  /data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '28:16'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '28:25'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '29:15'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '29:24'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
+    FileOffset:      '13:9'
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+...

@@ -1,0 +1,12 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<blockvec, 0>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="13" pragmaType="dataflow" parentfunction="top" disable_start_propagation="0"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="25" pragmaType="dataflow" parentfunction="top" disable_start_propagation="0"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="7" pragmaType="interface" parentfunction="top" mode="m_axi" port="A" bundle="gmem0" offset="slave" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="8" pragmaType="interface" parentfunction="top" mode="m_axi" port="B" bundle="gmem1" offset="slave" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="9" pragmaType="interface" parentfunction="top" mode="s_axilite" port="A" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="10" pragmaType="interface" parentfunction="top" mode="s_axilite" port="B" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="11" pragmaType="interface" parentfunction="top" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="12" pragmaType="aggregate" parentfunction="top" compact="3" variable="C"/>
+<pragma file="/data/matthew/matmult/src/block_mm_entry.cpp" line="15" pragmaType="stream" parentfunction="top" depth="8" type="fifo" variable="pipe"/>
+</pragmas>

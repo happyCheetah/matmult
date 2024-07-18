@@ -1,0 +1,5 @@
+/data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp:40718:2: warning: Added loop label VITIS_LOOP_24_1:   [xilinx-label-all-loops]
+ for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
+ ^~~
+ VITIS_LOOP_24_1: 
+/data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp:40718:2: note: FIX-IT applied suggested code changes

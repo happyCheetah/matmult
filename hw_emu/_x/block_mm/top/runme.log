@@ -10,7 +10,7 @@
 
 source /tools/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'matthew' on host 'yangzi' (Linux_x86_64 version 5.4.0-150-generic) on Wed Jul 17 22:29:50 PDT 2024
+INFO: [HLS 200-10] For user 'matthew' on host 'yangzi' (Linux_x86_64 version 5.4.0-150-generic) on Wed Jul 17 22:47:04 PDT 2024
 INFO: [HLS 200-10] On os Ubuntu 18.04.5 LTS
 INFO: [HLS 200-10] In directory '/data/matthew/matmult/hw_emu/_x/block_mm/top'
 Sourcing Tcl script 'top.tcl'
@@ -43,21 +43,33 @@ INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=0
 INFO: [HLS 200-1510] Running: config_export -format xo -ipname top 
 INFO: [HLS 200-1907] Replacing 'config_export -deadlock_detection=sim' with 'config_rtl -deadlock_detection=sim' in current solution file
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.072 GB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.072 GB.
 INFO: [HLS 200-10] Analyzing design file '/data/matthew/matmult/src/block_mm_entry.cpp' ... 
-ERROR: [HLS 207-3776] use of undeclared identifier 'C' (/data/matthew/matmult/src/block_mm_entry.cpp:5:33)
-WARNING: [HLS 207-5544] invalid variable expr  (/data/matthew/matmult/src/block_mm_entry.cpp:5:33)
-ERROR: [HLS 207-3776] use of undeclared identifier 'C' (/data/matthew/matmult/src/block_mm_entry.cpp:12:32)
-WARNING: [HLS 207-5544] invalid variable expr  (/data/matthew/matmult/src/block_mm_entry.cpp:12:32)
-ERROR: [HLS 207-3339] no matching function for call to 'blockmatmul' (/data/matthew/matmult/src/block_mm_entry.cpp:28:3)
-INFO: [HLS 207-4378] candidate function not viable: no known conversion from 'blockmat [4096]' to 'blockmat &' for 3rd argument (/data/matthew/matmult/src/block.h:20:6)
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0.47 seconds. CPU system time: 0.31 seconds. Elapsed time: 0.78 seconds; current allocated memory: 0.836 MB.
- 
+WARNING: [HLS 207-5557] Unsupported interface port data type in '#pragma HLS interface bram' (/data/matthew/matmult/src/block_mm_entry.cpp:5:33)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult/src/block_mm_entry.cpp:28:16)
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult/src/block_mm_entry.cpp:28:25)
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult/src/block_mm_entry.cpp:29:15)
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/data/matthew/matmult/src/block_mm_entry.cpp:29:24)
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (/data/matthew/matmult/src/block_mm_entry.cpp:13:9)
+Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-114.html
+WARNING: [HLS 200-471] Dataflow form checks found 5 issue(s) in file /data/matthew/matmult/src/block_mm_entry.cpp
+Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-471.html
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2.3 seconds. CPU system time: 0.8 seconds. Elapsed time: 3.1 seconds; current allocated memory: 1.074 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+ERROR: [HLS 214-244] in function 'top(blockvec*, blockvec*, blockmat)': Failed to implement stream interface on variable 'pipe'. Each array element of 'pipe' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order. (/data/matthew/matmult/src/block_mm_entry.cpp:14:24)
+Resolution: For help on HLS 214-244 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-244.html
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.62 seconds. CPU system time: 1.48 seconds. Elapsed time: 7.12 seconds; current allocated memory: 1.977 MB.
+Pre-synthesis failed.
     while executing
 "source top.tcl"
     ("uplevel" body line 1)
     invoked from within
 "uplevel \#0 [list source $arg] "
 
-INFO: [HLS 200-112] Total CPU user time: 3.84 seconds. Total CPU system time: 1.12 seconds. Total elapsed time: 4.75 seconds; peak allocated memory: 1.073 GB.
-INFO: [Common 17-206] Exiting vitis_hls at Wed Jul 17 22:29:54 2024...
+INFO: [HLS 200-112] Total CPU user time: 8.96 seconds. Total CPU system time: 2.32 seconds. Total elapsed time: 11.08 seconds; peak allocated memory: 1.074 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Wed Jul 17 22:47:14 2024...

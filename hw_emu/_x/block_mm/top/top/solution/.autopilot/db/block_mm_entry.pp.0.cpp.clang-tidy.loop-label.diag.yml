@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_24_1:  '
+    FileOffset:      24
+    FilePath:        /data/matthew/matmult/src/block_mm_entry.cpp
+    Replacements:    
+      - FilePath:        /data/matthew/matmult/hw_emu/_x/block_mm/top/top/solution/.autopilot/db/block_mm_entry.pp.0.cpp
+        Offset:          1118015
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_24_1: '
+...

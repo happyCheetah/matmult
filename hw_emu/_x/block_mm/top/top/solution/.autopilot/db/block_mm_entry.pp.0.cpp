@@ -40690,7 +40690,11 @@ void loadDDR(blockvec A[], blockvec B[], hls::stream<blockvec> &Arows, hls::stre
 void blockmatmul(hls::stream<blockvec> &Arows, hls::stream<blockvec> &Bcols, blockmat &ABpartial, int it);
 # 2 "/data/matthew/matmult/src/block_mm_entry.cpp" 2
 
-void top(blockvec A[], blockvec B[]){
+__attribute__((sdx_kernel("top", 0))) void top(blockvec A[], blockvec B[], blockmat C){
+#line 27 "/data/matthew/matmult/hw_emu/_x/block_mm/top/top.tcl"
+#pragma HLSDIRECTIVE TOP name=top
+# 3 "/data/matthew/matmult/src/block_mm_entry.cpp"
+
 
 #pragma HLS INTERFACE bram port=C storage_type=ram_2p
 
@@ -40700,6 +40704,7 @@ void top(blockvec A[], blockvec B[]){
 #pragma HLS INTERFACE s_axilite port=B bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 #pragma HLS aggregate variable=C
+#pragma HLS DATAFLOW
  hls::stream<blockvec> pipe[2];
 #pragma HLS STREAM variable=pipe depth=8
 
@@ -40709,8 +40714,8 @@ void top(blockvec A[], blockvec B[]){
 
 
 
- blockmat C[SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE)];
- for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
+
+ VITIS_LOOP_24_1: for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
 #pragma HLS DATAFLOW
 
 

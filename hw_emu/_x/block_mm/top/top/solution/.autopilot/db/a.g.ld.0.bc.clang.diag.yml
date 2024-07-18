@@ -1,0 +1,24 @@
+--- !HLSUnsupported
+Pass:            reflow-entirety-access-check
+Name:            NonEntiretyAccessOnArrayToStream
+DebugLoc:        { File: /data/matthew/matmult/src/block_mm_entry.cpp, 
+                   Line: 14, Column: 24 }
+Function:        _Z3topP8blockvecS0_8blockmat
+Args:            
+  - String:          'in function '''
+  - Function:        'top(blockvec*, blockvec*, blockmat)'
+    DebugLoc:        { File: /data/matthew/matmult/src/block_mm_entry.cpp, 
+                       Line: 3, Column: 0 }
+  - String:          ''': '
+  - String:          'Failed to implement stream interface on variable '''
+  - Name:            pipe
+  - String:          '''. Each array element of '''
+  - Name:            pipe
+  - String:          ''' must: (a) be accessed only once, (b) read or write the whole array element in one operation and (c) be accessed in sequential order.'
+...
+--- !HLSReportFatalError
+Pass:            reflow-entirety-access-check
+Name:            HLSFatalError
+Args:            
+  - Msg:             Fail to Synthesize.
+...
