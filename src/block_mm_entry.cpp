@@ -1,10 +1,6 @@
 #include "block.h"
 
-//top lvl module. 
-//note given no host code, skip host related step in compiling process
-
-int n = 8;
-void top(blockvec A[], blockvec B[],blockvec C[]){
+void top(blockvec A[], blockvec B[],blockmat C[]){
 	//Assume C is buffered on-chip
 	#pragma HLS INTERFACE bram port=C storage_type=ram_2p
 	//Put DDR interfacing directives for A & B
@@ -12,38 +8,28 @@ void top(blockvec A[], blockvec B[],blockvec C[]){
 	#pragma HLS INTERFACE m_axi port=B bundle=gmem1 offset=slave
 	#pragma HLS INTERFACE s_axilite port=A bundle=control
 	#pragma HLS INTERFACE s_axilite port=B bundle=control
-	// #pragma HLS INTERFACE s_axilite port=return bundle=control
+	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS aggregate variable=C
-	#pragma HLS aggregate variable=A
-	#pragma HLS aggregate variable=B
-	//Stream<blockvec> pipe[2];
-	hls::stream<blockvec> pipe;
+	Stream<blockvec> pipe[2];
 	#pragma HLS STREAM variable=pipe depth=8
 	//pipe[0] and [1] are fifos used to chain together provider(load_DDR) and consumer(blockmatmul)
 	//pipe[0] for Arows, pipe[1] for Bcols
 
-	blockvec C_onchip[SIZE];
-	blockvec B_buffer[SIZE];
-	
 	//"it" is a counter to keep track of the tile/block indices in different kernel calls
-	for (int it=0;it<n;it++){
+	//it = tracks what sub block we are currently on 
+
+	//
+	blockmat C[SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE)];
+	for (int it=0;it<SIZE*SIZE/(BLOCK_SIZE*BLOCK_SIZE);it++){
 		#pragma HLS DATAFLOW
 		//call loadDDR and blockmatmul functions chained with fifos in the pipe array
-		loadDDR(A, B, pipe, B_buffer,SIZE);
-		blockmatmul(pipe, B_buffer, C_onchip, SIZE);
-		
+		// *** your code here *** //
+		loadDDR(A, B, pipe[0], pipe[1], it);
+		blockmatmul(pipe[0], pipe[1], C, it);
 	}
-// Final goal:
-	// for (int it=0;it<n;it++){
-	// 	#pragma HLS DATAFLOW
-	// 	loadDDR(A, B pipe_A, buffer_B, it);
-	// 	loadDDR(D, pipe_D, SIZE2);
-	// 	blockmatmul(pipe_A, buffer_B, buffer_C, it);
-	//	blockmatmul(pipe_D, buffer_C, buffer_E, it);
-	// 	writeDDR(buffer_E, E);
-	// }
 
-	
+	//notes: 
 }
 
 
+ 
